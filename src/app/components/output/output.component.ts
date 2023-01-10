@@ -9,7 +9,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./output.component.css'],
 })
 export class OutputComponent implements OnInit {
-  counter$!: Observable<{ counter: number }>;
+  // counter$!: Observable<{ counter: number; msg: string }>;
+  counter$!: Observable<counterState>;
+  msgs!: string;
   constructor(private store: Store<{ counter: counterState }>) {}
   ngOnInit() {
     this.counter$ = this.store.select('counter');

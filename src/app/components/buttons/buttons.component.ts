@@ -1,5 +1,5 @@
 import { counterState } from './../../store/initialState';
-import { Reset, Increase, Decrease } from './../../store/actions';
+import { Reset, Increase, Decrease, ChangeText } from './../../store/actions';
 import { Store } from '@ngrx/store';
 import { Component } from '@angular/core';
 
@@ -18,5 +18,8 @@ export class ButtonsComponent {
   }
   onReset(): void {
     this.store.dispatch(Reset());
+  }
+  onChangeText() {
+    this.store.dispatch(ChangeText({ value: 'Text Have Changed' }));
   }
 }
